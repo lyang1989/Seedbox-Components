@@ -1,6 +1,6 @@
 function qBittorrent_download {
     need_input; echo "Please enter your choice (qBittorrent Version - libtorrent Version):"; normal_3
-    options=("qBittorrent 4.1.9 - libtorrent-1_1_14" "qBittorrent 4.1.9.1 - libtorrent-1_1_14" "qBittorrent 4.3.3 - libtorrent-v1.2.13" "qBittorrent 4.3.4.1 - libtorrent-v1.2.13" "qBittorrent 4.3.5 - libtorrent-v1.2.13" "qBittorrent 4.3.6 - libtorrent-v1.2.14" "qBittorrent 4.3.7 - libtorrent-v1.2.14" "qBittorrent 4.3.8 - libtorrent-v1.2.14" "qBittorrent 4.3.9 - libtorrent-v1.2.15" "qBittorrent 4.3.9 - skip" "qBittorrent 4.4.0beta2 - libtorrent-v2.0.4")
+    options=("qBittorrent 4.1.9 - libtorrent-1_1_14" "qBittorrent 4.1.9.1 - libtorrent-1_1_14" "qBittorrent 4.3.3 - libtorrent-v1.2.13" "qBittorrent 4.3.4.1 - libtorrent-v1.2.13" "qBittorrent 4.3.5 - libtorrent-v1.2.13" "qBittorrent 4.3.6 - libtorrent-v1.2.14" "qBittorrent 4.3.7 - libtorrent-v1.2.14" "qBittorrent 4.3.8 - libtorrent-v1.2.14" "qBittorrent 4.3.9 - libtorrent-v1.2.15" "qBittorrent 4.3.9 - skip" "qBittorrent 4.4.0beta2 - libtorrent-v2.0.4" "qBittorrent 4.4.3.1 - libtorrent-v1.2.16" "qBittorrent 4.4.3.1 - libtorrent-v2.0.6")
     select opt in "${options[@]}"
     do
         case $opt in
@@ -37,6 +37,12 @@ function qBittorrent_download {
             "qBittorrent 4.4.0beta2 - libtorrent-v2.0.4")
                 version=4.4.0; wget https://raw.githubusercontent.com/lyang1989/Seedbox-Components/main/Torrent%20Clients/qBittorrent/qBittorrent/qBittorrent%204.4.0beta2%20-%20libtorrent-v2.0.4/qbittorrent-nox && chmod +x $HOME/qbittorrent-nox; break
                 ;;
+            "qBittorrent 4.4.3.1 - libtorrent-v1.2.16")
+                version=4.4.3.1; wget https://raw.githubusercontent.com/lyang1989/Seedbox-Components/main/Torrent%20Clients/qBittorrent/qBittorrent/qBittorrent%204.4.3.1%20-%20libtorrent-v1.2.16/qbittorrent-nox && chmod +x $HOME/qbittorrent-nox; break
+                ;;
+            "qBittorrent 4.4.3.1 - libtorrent-v2.0.6")
+                version=4.4.3.1; wget https://raw.githubusercontent.com/lyang1989/Seedbox-Components/main/Torrent%20Clients/qBittorrent/qBittorrent/qBittorrent%204.4.3.1%20-%20libtorrent-v2.0.6/qbittorrent-nox && chmod +x $HOME/qbittorrent-nox; break
+                ;;                
             *) warn_1; echo "Please choose a valid version"; normal_3;;
         esac
     done
